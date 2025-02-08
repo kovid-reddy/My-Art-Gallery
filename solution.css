@@ -1,0 +1,75 @@
+/* Basic CSS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+/* Gallery Grid CSS */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.gallery a:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%) contrast(120%);
+}
+
+/* Lightbox Effects */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
